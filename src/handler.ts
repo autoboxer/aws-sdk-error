@@ -6,7 +6,7 @@ export const showError = async () => {
 
   const params = {
     Message: 'some text',
-    TopicArn: 'arn:aws:sns:us-east-1:111111111111:someOtherTopic'
+    TopicArn: 'arn:aws:sns:us-west-1:111111111111:someOtherTopic'
   };
 
   try {
