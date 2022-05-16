@@ -1,0 +1,25 @@
+service: aws-sdk-error
+
+frameworkVersion: '3'
+
+plugins:
+  - serverless-webpack
+  - serverless-offline-sns
+  - serverless-offline
+
+package:
+  individually: true
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+custom:
+  serverless-offline-sns:
+    port: 4000
+
+functions:
+  test:
+    handler: src/handler.showError
+    events:
+      - sns: arn:aws:sns:us-east-1:111111111111:someTopic
